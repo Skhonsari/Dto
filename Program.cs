@@ -23,6 +23,15 @@ namespace Dto
             {
                 Console.WriteLine($"({item.Key}, {item.Value})");
             }
+
+            var t2 = new DtoProvBuilder<Test>()
+                .addYechizi(t => t.MyProperty2)
+                .addYechizi(t => t.MyProperty3)
+                .build();
+            foreach (var item in t2.createDto(new Test(1, 2, "salam")))
+            {
+                Console.WriteLine($"({item.Key}, {item.Value})");
+            }
         }
     }
 }
